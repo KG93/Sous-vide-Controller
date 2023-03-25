@@ -1,8 +1,8 @@
 // EEPROM
 #include <EEPROM.h>
-const int EEPROM_ADDR_KP = 0; // memory addresses for PID parameters
-const int EEPROM_ADDR_KI = 4;
-const int EEPROM_ADDR_KD = 8;
+#define EEPROM_ADDR_KP  0 // memory addresses for PID parameters
+#define EEPROM_ADDR_KI  4
+#define EEPROM_ADDR_KD  8
 
 // PID
 #include <analogWrite.h>
@@ -68,9 +68,9 @@ void timerIsr()
 #define MAXDO   12
 #define MAXDI   11
 #define MAXCS   10
-int maxTemp = 98;
-int minTemp = 0;
-float tempIncrement = 0.1;
+const int maxTemp = 98;
+const int minTemp = 0;
+const float tempIncrement = 0.1;
 #define RREF 430.0 //reference resistor in 0hm
 Adafruit_MAX31865 max31865 = Adafruit_MAX31865(MAXCS, MAXDI, MAXDO, MAXCLK);
 pt100rtd rtdLookupTable;
